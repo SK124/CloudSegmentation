@@ -77,3 +77,24 @@ Following models were implemented from scratch
         • R2UNet (Not implemented from scratch)
         
         • UNet with Resnet encoder
+### Training Approaches
+- A combination of above models and above loss functions were experimented.
+However, due to a technical issue which is still unclear, my kernels were 
+incredibly slow and never allowed me to train my models, on average each 
+training epoch took 35-45 mins and each validation epoch took 10 minutes 
+making it incredibly harder to even tune the hyperparameters. Almost every 
+kernel crashed in the process. On attention unets it took 1hr+ since all I could fit 
+was 5 images in one batch. Even there was of a memory allocation issue with the 
+written from scratch models, since they are not as optimized as the ones offered 
+by different distros like segmentations_pytorch. For, e.g. the 2 versions of UNets 
+written from scratch could hardly fit more than 10 images in some experiments, 
+thus switched to pytorch_segmentation resnet encoder which allowed me to fit 
+12-16 images in a batch without crashing frequently. Thus, my results are from 
+those models because they were the only ones which I could train for longer 
+durations. Owing to the limitations, in some experiments I decided to randomly
+split the data into 50% and train 5 epochs on that notice the metrics and tune the 
+hyperparameters if need be and sampled the data again continued the process
+recurrently, while in others I trained on 6000 images and validated on 2400 
+images. 
+- A Summary of All Approaches I experimented. I used Weights and Biases to log 
+my metrics
