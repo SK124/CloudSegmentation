@@ -178,3 +178,7 @@ datapoints and both the runs are consecutive and on different folds of data.
       • Precision 0.9929, 
       • Recall 0.9576, 
       • Specificity 0.996
+#### UNet with Resnet Encoder and Focal Loss function with all Transforms and 6000 training and 2400 Images.
+- Unfortunately, right before end of training I exhausted my 9hr runtime session 
+and Kaggle automatically switched off the kernel before I could save any weights, 
+so I am sharing weights and biases report to show its performance
