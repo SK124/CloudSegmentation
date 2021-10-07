@@ -36,11 +36,11 @@ model for respective labels. E.g in case of Binary cross entropy this info could
 passed and the function penalises accordingly as a pos_weight argument in this 
 case which is the ratio of classes.
 
-                                  Criterion : nn.BCEWithLogitsLoss(pos_weight=torch.tensor(Ratio))
-                                  
-                                  Ratio = Label 0(Majority)/Label 1 (Minority)
-                                  
-                                  Where, Ratio in this case is 2.3053
+                          Criterion : nn.BCEWithLogitsLoss(pos_weight=torch.tensor(Ratio))
+
+                          Ratio = Label 0(Majority)/Label 1 (Minority)
+
+                          Where, Ratio in this case is 2.3053
 ### Loss Functions
 - A several loss functions were experimented taking into account the imbalance 
 namely
@@ -57,4 +57,23 @@ namely
 
           • Mixed Focal Loss (alpha * Focal Loss + beta * Dice coefficient)
 
+- However, I used only Focal, Mixed Focal, Focal Tversky, Weighted BCE. 
+- Reason: After doing a brief research for many segmentation problems especially 
+when there is a imbalance, many users recommend them, also considering time 
+limitations I used the ones which I could understand. In a similar Kaggle 
+competition with cloud segmentation the Leader board topper used focal loss thus 
+I went with it
 
+### Models
+- A variety of models were considered mostly from UNet Family, as it is known 
+for its performances and reliability, since time was a hurdle, it made sense to stick 
+to tried and tested models.
+Following models were implemented from scratch
+
+        • Vanilla UNet
+        
+        • UNet with Attention Mechanism
+        
+        • R2UNet (Not implemented from scratch)
+        
+        • UNet with Resnet encoder
