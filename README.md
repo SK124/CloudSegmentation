@@ -77,6 +77,21 @@ Following models were implemented from scratch
         • R2UNet (Not implemented from scratch)
         
         • UNet with Resnet encoder
+### Image Augmentations.
+- Since traditional PyTorch doesn’t have much support for Image Segmentations
+augmentations, I switched to the Augmentations. The transformations applied are 
+the following. Augmentations is an excellent library in PyTorch ecosystem having vareity of good augmentations to experiment with.
+
+
+      • RandomSizedCrop
+      • PadIfNeeded
+      • VerticalFlip 
+      • RandomRotate90
+      • ElasticTransform
+      • GridDistortion
+      • OpticalDistortion 
+      • RandomGamma
+
 ### Training Approaches
 - A combination of above models and above loss functions were experimented.
 However, due to a technical issue which is still unclear, my kernels were 
@@ -98,3 +113,68 @@ recurrently, while in others I trained on 6000 images and validated on 2400
 images. 
 - A Summary of All Approaches I experimented. I used Weights and Biases to log 
 my metrics
+![image](https://user-images.githubusercontent.com/47039231/136318231-fe6b5394-aee8-4bfe-a17b-ae2493068982.png)
+### Metrics Used: 
+
+    • Dice Coefficient
+    • Jaccard Index/IOU
+    • Pixel Accuracy
+    • Precision
+    • Recall
+    • Sensitivity
+### Results
+- After running a variety of models, I was finally left with 3 models that trained 
+until the end, All the following runs were performed on 2400 Randomly sampled 
+datapoints and both the runs are consecutive and on different folds of data. 
+#### UNet with Resnet Encoder with Focal Loss with No/Minimal Transforms and trained on 50% datapoints
+
+- Run1
+
+      • IoU: 0.8713, 
+      • Pixel Accuracy: 0.9405
+      • Dice Coeff. 0.9312
+      • Precision 0.9757
+      • Recall 0.8906
+      • Specificty 0.9817
+- Run 2 
+
+      • IoU: 0.6879
+      • Pixel Accuracy: 0.8348
+      • Dice coeff 0.7638)
+      • Precision 0.9907
+      • Recall 0.6215
+      • Specificity: 0.9956
+#### UNet with Resnet Backbone with augmentations (Vertical and 90degreeflip and RandomGamma) and Weighted Binary Cross Entropy as Loss function 
+- Run 1:
+
+      • IoU: 0.8194
+      • Pixel Accuracy 0.9083
+      • Dice Coeff. 0.9007
+      • Precision :0.8222
+      • Recall 0.9958
+      • Specificity: 0.8455
+- Run 2:
+
+      • IoU: 0.8793
+      • Pixel Accuracy: 0.9461
+      • Dice Coeff. 0.9357
+      • Precision 0.8803
+      • Recall 0.9986, 
+      • Specificity :0.9120
+#### UNet with Resnet Backbone and with all the augmentations discussed in above section with Weighted Binary Cross Entropy as Loss function and 6000,2400 split.
+- Run1:
+
+      • IoU : 0.9395, 
+      • Pixel Accuracy 0.9768, 
+      • Dice Coeff 0.9688, 
+      • Precision 0.9738,
+      • Recall 0.9638
+      • Specificity 0.9846
+- Run2:
+
+      • IoU 0.9511, 
+      • Pixel Accuracy 0.9829, 
+      • Dice Coeff 0.9750, 
+      • Precision 0.9929, 
+      • Recall 0.9576, 
+      • Specificity 0.996
