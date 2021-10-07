@@ -182,3 +182,8 @@ datapoints and both the runs are consecutive and on different folds of data.
 - Unfortunately, right before end of training I exhausted my 9hr runtime session 
 and Kaggle automatically switched off the kernel before I could save any weights, 
 so I am sharing weights and biases report to show its performance
+![image](https://user-images.githubusercontent.com/47039231/136318842-60826b5b-383d-4426-b366-dc925ce502c6.png)
+### Conclusion
+- Although the problem in hand was very generic,but it was challenging in many ways, the limited computational power, data distribution 
+and time constraints was what made it interesting. 
+- Having to run 1 epoch for 1-2 hr tested my patience
