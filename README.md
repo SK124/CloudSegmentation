@@ -22,11 +22,11 @@ images in all of the experiments.
 ### Imbalance in Labels:
 ![image](https://user-images.githubusercontent.com/47039231/136316605-8a156cd0-c8c0-41c6-b7ff-6ca8fdbf9cbe.png)
 
-                                  1. Y Axis: Counts of Labels that is per pixel count. Label - 0, Label - 1
+                          1. Y Axis: Counts of Labels that is per pixel count. Label - 0, Label - 1
 
-                                  2. X Axis: Labels (0: Background and 1: Cloud)
+                          2. X Axis: Labels (0: Background and 1: Cloud)
 
-                                  3. Label 0: 863885830 , Label 1: 374744570 
+                          3. Label 0: 863885830 , Label 1: 374744570 
 -  Le Meme has arrived 
  ![image](https://user-images.githubusercontent.com/47039231/136317455-0a5f6f15-1afc-4c10-b93b-86305800b207.png)
  
