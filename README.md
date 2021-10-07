@@ -5,7 +5,7 @@ UNet Family with ResNet backbones are the go to method to start with.
 - The dataset is open sourced, thanks to [Kaggle : 38CloudsDataset](https://www.kaggle.com/sorour/38cloud-cloud-segmentation-in-satellite-images)
 - Here, I have experimented with UNet with Resnet Backbone and used different losses because of computational limits, I have been wanting to experiment with Attention based UNets and Transformer based Segmentation algorithms however, the Kaggle compute limitations and absence of computationally efficent writeup of algorithms, my hands were tied but one thing i could experiment with limited compute was different penalties to mistakes of algorithm.
 - I have used [Albumentations](https://github.com/albumentations-team/albumentations), a library with excellent and fast image augmentations to reduce model's variance. 
-- Following writeup talks about the data makeup which is imbalanced and ways of to tackling it, and other quirks such as incorporating Weights & Biases into your code for better result visualizations and inferences.
+- Following writeup talks about the data makeup which is imbalanced and ways to tackling it, and other quirks such as incorporating [Weights & Biases](https://wandb.ai/site) into your code for better result visualizations and inferences.
 
 ### Exploratory Data Analysis
 ### Importance of Channels:
