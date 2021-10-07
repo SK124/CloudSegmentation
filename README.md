@@ -1,9 +1,10 @@
 # Cloud Segmentation 
 ## A Solution involving Pixel Level Classification
-- Traditional Image segmentation revolve around Clustering and PCA, in Deep Learning, this paradigm can be solved with powerful convolutional and transformer based algorithims,
+- Traditional Image segmentation revolve around K-Means Clustering and PCA, in Deep Learning, this paradigm can be solved with powerful convolutional and transformer based algorithms,
 UNet Family with ResNet backbones are the go to method to start with. 
-- The dataset is open sourced, thanks to Kaggle : 38CloudsDataset
-- Here, I have experimented with UNet with Resnet Backbone and used different losses because of computational limits, I have been wanting to experiment with Attention based UNets and Transformer based Segmentation algorithms however, the Kaggle compute limitations and absence of computationally efficent writeup of algorithms,my hands were tied but one thing i could experiment with limited compute was didfferent penalties to mistakes.
+- The dataset is open sourced, thanks to [Kaggle : 38CloudsDataset](https://www.kaggle.com/sorour/38cloud-cloud-segmentation-in-satellite-images)
+- Here, I have experimented with UNet with Resnet Backbone and used different losses because of computational limits, I have been wanting to experiment with Attention based UNets and Transformer based Segmentation algorithms however, the Kaggle compute limitations and absence of computationally efficent writeup of algorithms, my hands were tied but one thing i could experiment with limited compute was different penalties to mistakes of algorithm.
+- I have used [Albumentations](https://github.com/albumentations-team/albumentations), a library with excellent and fast image augmentations to reduce model's variance. 
 - Following writeup talks about the data makeup which is imbalanced and ways of to tackling it, and other quirks such as incorporating Weights & Biases into your code for better result visualizations and inferences.
 
 ### Exploratory Data Analysis
@@ -17,7 +18,7 @@ scatter, thus has more depth information compared to other colour channels like
 Red, Green, Blue which get scattered more easily. Thus, NIR is a very important 
 channel in this dataset and cannot be discarded. Thus, I worked with 4 channel 
 images in all of the experiments.
-- Working with 4 channels means no pretrained weights without moidyfingn earlier layers of network, a sacrifice to be sure but a welcome one.
+- Working with 4 channels means no pretrained weights without modifying earlier layers of network, a sacrifice to be sure but a welcome one.
 ### Imbalance in Labels:
 ![image](https://user-images.githubusercontent.com/47039231/136316605-8a156cd0-c8c0-41c6-b7ff-6ca8fdbf9cbe.png)
 
@@ -79,8 +80,8 @@ Following models were implemented from scratch
         • UNet with Resnet encoder
 ### Image Augmentations.
 - Since traditional PyTorch doesn’t have much support for Image Segmentations
-augmentations, I switched to the Augmentations. The transformations applied are 
-the following. Augmentations is an excellent library in PyTorch ecosystem having vareity of good augmentations to experiment with.
+augmentations, I switched to the Albumentations. The transformations applied are 
+the following. Albumentations is an excellent library in PyTorch ecosystem having vareity of good augmentations to experiment with.
 
 
       • RandomSizedCrop
